@@ -1,0 +1,133 @@
+<html>
+<head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  input[type="text"], input[type="date"], select {
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  pre {
+    margin: 0;
+    color: #666;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 30px 0;
+  }
+  #othersdetails{
+    display: none;
+  }
+</style>
+</head>
+<body>
+ <fieldset >  
+<legend>PERSONAL DETAILS</legend>
+
+<pre>
+NAME OF THE CANDIDATE: <input type="text" placeholder="ENTER NAME" name="CANDIDATE"><br>
+DATE OF BIRTH: <input type="date" name="DOB"><br>
+GENDER: 
+      <input type="radio" name="SEX"> MALE
+      <input type="radio" name="SEX"> FEMALE
+      <input type="radio" name="SEX"> OTHER<br>
+
+NATIONALITY: <input type="text" placeholder="ENTER NATIONALITY" name="NATIONALITY"><br>
+</fieldset>
+<fieldset>
+<legend >EDUCATION DETAILS</legend>
+<pre>
+<br><br>
+10<sup>th</sup> GPA: <input type="text" name="10th"><br>
+AFTER 10TH COURSE: 
+                <input type="radio" name="COLLEGE" > DIPLOMA : <select>
+  <option value="BRANCH">BRANCH</option>
+  <option value="CME">CME</option>
+  <option value="MECH">MECH</option>
+  <option value="EEE">EEE</option>
+  <option value="ECE">ECE</option>
+  <option value="ARCH">ARCH</option>
+</select>
+                <input type="radio" name="COLLEGE"> INTER   :<select>
+  <option value="GROUP">GROUP</option>
+  <option value="MPC">MPC</option>
+  <option value="BIPC">BIPC</option>
+  <option value="MEC">MEC</option>
+  <option value="MEC">CEC</option>
+  <option value="MEC">HEC</option>
+  
+</select>
+<br>
+    <input type="radio" name="COLLEGE" id="others" > OTHERS 
+    <div id="othersdetails">
+        COURSE NAME:<input type="text" name="course">
+        BRANCH NAME:<input type="text" name="branch">
+    </div>
+    <hr>
+HIGHER EDUCATION:
+<input type="radio" name="COLLEGE" > BTECH    : <select>
+<option value="BRANCH">BRANCH</option>
+<option value="CME">CME</option>
+<option value="MECH">MECH</option>
+<option value="EEE">EEE</option>
+<option value="ECE">ECE</option>
+<option value="ARCH">ARCH</option>
+</select>    
+</select>
+<input type="radio" name="COLLEGE" > DEGREE    : <select>
+<option value="BRANCH">BRANCH</option>
+<option value="CME">BACHERALS OF SCIENCE</option>
+<option value="MECH">BACHAERALS OF ARTS</option>
+<option value="EEE">BACHAERALS OF LAW</option>
+<option value="ECE">BACHAERALS OF ENGINEERING</option>
+</select>    
+</fieldset>
+<fieldset >  
+  <legend>SPECIAL COURSE:</legend>
+  <pre>
+    COURSE TYPE: <input type="text" placeholder="COURSE NAME" name="NATIONALITY"><br>
+    COURSE TYPE: <input type="text" placeholder="COURSE NAME" name="NATIONALITY"><br>
+    COURSE TYPE: <input type="text" placeholder="COURSE NAME" name="NATIONALITY"><br>
+  </fieldset>
+  Note:If any of the above not done then leave them do not fill it.<br>
+    <div class="submit-place">
+      <button type="button" style="width: 50%;" class="btn btn-outline-success"><a href="main.html">Submit</a></button>
+  </div>
+  
+<script>
+    let radioclicked=document.getElementById("others");
+    let otherdetails=document.getElementById("othersdetails");
+    radioclicked.addEventListener('click', ()=>{
+        if(radioclicked.checked){
+             otherdetails.style.display = "block";
+         }
+         if(radioclicked.unchecked){
+            otherdetails.style.display = "none";
+         }
+    })
+    
+</script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLogin_SignUp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        transition: 1s;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(download.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .container{
+        height: 50vh;
+        width: 40vw;
+        background-color: transparent;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-shadow: 0px 0px 5px black, 5px 5px 10px black;
+    }
+    .tabs{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        height: 15%;
+    }
+    .tab{
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: x-large;
+        color: azure;
+    }
+    .active{
+        background-color: rgb(0, 174, 255);
+    }
+    .inactive{
+        background-color: #070c0c;
+    }
+    .contents{
+        width: 100%;
+        height: calc(100% - 15%);
+        position: relative;
+    }
+    .conBox{
+        width: 100%;
+        height: 100%;
+        color: rgb(0, 174, 255);
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+    }
+    input{
+        border: none;
+        border-bottom: 1px solid rgb(0, 174, 255);
+        background-color: transparent;
+        color: white;
+        margin-left: 5px;
+        padding: 0 10px;
+    }
+    input:focus{
+        border: none;
+        border-bottom: 5px solid rgb(0, 234, 255);
+    }
+    .conBox .submit-place{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+         
+    }
+    .btn{
+        width: 20%;
+    }
+    .btn:hover{
+        letter-spacing: 2px;
+        transition: 0.5s;
+        transform: scaleX(1.3);
+    }
+    .cinactive{
+        display: none;
+    }
+
+
+</style>
+
+<body>
+    
+    <div class="container">
+        <div class="tabs">
+            <div id="tab1" class="tab active">Login</div>
+            <div id="tab2" class="tab">Sign Up</div>
+        </div>
+        <div class="contents">
+            <div class="conBox">
+                <h1>Login</h1>
+                <br>
+                <form action="">
+                    <label for="inputId">Enter User-Id : </label>
+                    <input type="text" id="inputId" placeholder="User-Id / Phone-Number" required>
+                    <br><br>
+                    <label for="inputPassword">Enter Password : </label>
+                    <input type="text" placeholder="Password" id="inputPassword" required>
+                </form>
+                <br>
+                <div class="submit-place">
+                    <a href="#">forget Password</a>
+                    <button type="button" class="btn btn-outline-success">,<a href="main.html">Login</a></button>
+                </div>
+            </div>
+
+            <div class="conBox cinactive">
+                <h1>Sign Up</h1>
+                <form action="">
+                    <label for="uname">User Name :</label>
+                    <input type="email" id="email">
+                    <br>
+                    <label for="pass">Create Password : </label>
+                    <input type="password" id="pass">
+                    <br>
+                    <label for="cpass">Conform Password : </label>
+                    <input type="password" id="cpass">
+                    <br>
+                    <br>
+                    <div class="submit-place">
+                        <button type="button" style="width: 50%;" class="btn btn-outline-success"><a href="register.html">Submit</a></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script >
+        let tab = document.getElementsByClassName("tab");
+        let contents = document.getElementsByClassName('conBox');
+        let tabs = Array.from(tab);
+        let content = Array.from(contents);
+        tabs.forEach((x, index) =>{
+            x.addEventListener('click',()=>{
+                tabs.forEach(x => x.classList.remove('active'));
+                x.classList.add("active");
+
+                content.forEach(x => x.classList.add('cinactive'));
+                contents[index].classList.remove('cinactive');
+            })
+        })
+    </script>
+</body>
+</html>
